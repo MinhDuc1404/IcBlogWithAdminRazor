@@ -17,7 +17,6 @@ namespace IcBlog.Infrastructure.Models
 
         public string Content { get; set; }
 
-        public string? Image { get; set; }
 
         public DateTime? DateTime { get; set; }
         public int CategoryID { get; set; }
