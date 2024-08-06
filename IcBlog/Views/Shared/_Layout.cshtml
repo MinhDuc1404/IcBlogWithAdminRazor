@@ -26,6 +26,9 @@
     https://templatemo.com/tm-551-stand-blog
 
     -->
+
+
+
 </head>
 
 <body>
@@ -118,6 +121,7 @@
     <script src="~/assets/js/slick.js"></script>
     <script src="~/assets/js/isotope.js"></script>
     <script src="~/assets/js/accordions.js"></script>
+ 
 
     <script language="text/Javascript">
 
@@ -128,7 +132,27 @@
                 t.value = '';         // with more chance of typos
                 t.style.color = '#fff';
             }
+       
         }
+ 
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var el = document.querySelector('.nav-item');
+            if (!el) {
+                console.log('Element with class .nav-item not found');
+                return;
+            }
+
+            el.addEventListener('click', function () {
+                var elall = document.querySelectorAll('.nav-item.active');
+                elall.forEach(item => {
+                    item.classList.remove('active'); // Loại bỏ lớp 'active' khỏi các phần tử
+                });
+                console.log('Clicked element:', el);
+                el.classList.add('active'); // Thêm lớp 'active' cho phần tử đã nhấp
+            });
+        });
     </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
